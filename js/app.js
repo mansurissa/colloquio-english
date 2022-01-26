@@ -14,14 +14,14 @@ const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 phone.addEventListener('keypress', (e) => {
     if (!phone.value.match(/^\d{7,9}$/)) {
         phone.style.borderColor = 'red';
-        phoneLabel.innerHTML = 'Phone number must have between 8 and 10 digits';
+        phoneLabel.textContent = 'Phone number must have between 8 and 10 digits';
         phoneLabel.style.color = 'red';
     }
 });
 
 const validator =((inputItem, labelName,errorMsg)=>{
     if (inputItem.value.length < 1) {
-        labelName.innerHTML = errorMsg;
+        labelName.textContent = errorMsg;
         inputItem.style.borderColor = 'red';
         labelName.style.color = 'red';
     }
@@ -31,7 +31,7 @@ sendBtn.addEventListener('click', (e) => {
     e.preventDefault()
 
     if (email.value.length < 1 || !email.value.match(emailRegex)){
-        emailLabel.innerHTML = 'Write an email(example@example.com)'
+        emailLabel.textContent = 'Write an email(example@example.com)'
         email.style.borderColor = 'red';
         emailLabel.style.color = 'red';
     }
@@ -41,7 +41,7 @@ sendBtn.addEventListener('click', (e) => {
     validator(textArea,textArea,'Write your message')
 
     if(nameLabel.style.color !=="red" && emailLabel.style.color!=="red" && companyLabel.style.color!=="red" && phoneLabel.style.color!=="red" && textArea.style.color!=="red"){
-    document.querySelector(".loaderContainer").classList.remove("hidden")
+   console.log("Sending request to Backendy")
     }
 });
 
@@ -55,26 +55,26 @@ resetBtn.addEventListener('click', (e) => {
         textArea.value = ''
     });
     document.querySelectorAll('label').forEach((label) => label.style.color = 'black')
-    nameLabel.innerHTML = 'Name';
-    emailLabel.innerHTML = 'Email';
-    phoneLabel.innerHTML = 'Phone';
-    companyLabel.innerHTML = 'Company';
+    nameLabel.textContent = 'Name';
+    companyLabel.textContent = 'Company';
     textArea.style.borderColor = 'black';
+    emailLabel.textContent = 'Email';
+    phoneLabel.textContent = 'Phone';
     textArea.style.color = 'black';
-    textArea.innerHTML= '';
+    textArea.textContent= '';
 });
 
 const removeError = (inputName, labelName) => {
-    const actualLabel = labelName.innerHTML
+    const actualLabel = labelName.textContent
     inputName.addEventListener('keydown', () => {
         inputName.style.borderColor =  'black';
-        labelName.innerHTML = actualLabel;
+        labelName.textContent = actualLabel;
        labelName.style.color =  'black';
     })
 }
 
 removeError(inputName, nameLabel)
-removeError(email, emailLabel)
 removeError(phone, phoneLabel)
 removeError(company, companyLabel)
+removeError(email, emailLabel)
 removeError(textArea, textArea)
