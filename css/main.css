@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+:root {
+
+    --input-border-bottom: 1px solid #000000;
+    --nomal-text-font-size: 24px;
+}
+body{
+    background-color: #fff;
+}
+.nav{
+   background-color: #A6CBDE;
+   height: 130px;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+}
+.logo {
+    height: 42px;
+}
+
+main {
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1 {
+    padding-top: 50px;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 55px;
+}
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.inputContainer {
+    flex-direction: column;
+    display: flex;
+    width: 500px;
+    margin-top: 80px;
+}
+.inputContainer label {
+    font-size: var(--nomal-text-font-size);
+}
+label{
+    margin-left: 6px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+   height: 30px;
+   width: 100%;
+   border: none;
+   border-bottom: 1px solid black;
+   font-weight: 300;
+   font-size: 24px;
+   line-height: 29px;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+}
+
+.msg {
+    margin-top: 80px;
+    border: none;
+    border-bottom: 1px solid black;
+    min-width: 100%;
+    font-size: var(--nomal-text-font-size);
+    height: 160px;
+
+}
+.buttons {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.buttons button {
+    height: 55px;
+    width: 131px;
+    margin-top:60px;
+    border:none;
+    margin-right: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: var(--nomal-text-font-size);
+}
+
+.sendBtn {
+    background-color: #A6CBDE;
+}
+.resetBtn {
+    background-color: #A2A3A4;
+}
+.sendBtn:hover, .resetBtn:hover{
+    background-color: #222A2E;
+    cursor: pointer;
+}
+
+.footer{
+    padding: auto;
+    background-color: #222A2E;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 110px;
+}
+
+@media screen  and (max-width: 1072px){
+input, textarea{
+    width: 350px;
+}
+}
+@media screen  and (max-width: 768px){
+    input, textarea{
+        width: 100%;
+    }
+    .flex{
+        flex-direction: column;
+    }
+    .inputContainer {
+        width: 100%;
+        margin-top: 60px;
+    }
+
+}
+.hidden{
+    display: none;
+}
